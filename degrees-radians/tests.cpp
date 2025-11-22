@@ -30,6 +30,8 @@ TEST(ComparisonTest, MoreThanOrEquals) {
     EXPECT_EQ(Radians(-30) > Degrees(-30), false);
     EXPECT_EQ(Radians(0) >= Degrees(0), true);
     EXPECT_EQ(Degrees(0) >= Radians(0), true);
+    EXPECT_EQ(Radians(M_PI) >= Degrees(180), true);
+    EXPECT_EQ(Degrees(180) >= Radians(M_PI), true);
 }
 
 TEST(ComparisonTest, LessThanOrEquals) {
@@ -40,6 +42,8 @@ TEST(ComparisonTest, LessThanOrEquals) {
     EXPECT_EQ(Radians(-30) < Degrees(-30), true);
     EXPECT_EQ(Radians(0) <= Degrees(0), true);
     EXPECT_EQ(Degrees(0) >= Radians(0), true);
+    EXPECT_EQ(Radians(M_PI) <= Degrees(180), true);
+    EXPECT_EQ(Degrees(180) <= Radians(M_PI), true);
 }
 
 TEST(ComparisonTest, Equals) {
@@ -48,6 +52,8 @@ TEST(ComparisonTest, Equals) {
     EXPECT_EQ(Degrees(180) == Degrees(-180), false);
     EXPECT_EQ(Degrees(180) == Radians(-M_PI), false);
     EXPECT_EQ(Radians(M_PI) == Radians(M_PI/2), false);
+    EXPECT_EQ(Radians(M_PI) == Degrees(180), true);
+    EXPECT_EQ(Degrees(360) == Radians(2*M_PI), true);
 }
 
 TEST(OperationsTest, Sum) {
