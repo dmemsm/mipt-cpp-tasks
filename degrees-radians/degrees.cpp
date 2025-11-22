@@ -1,3 +1,6 @@
+#include <sstream>
+#include <iomanip>
+#include <string>
 #include <cmath>
 #include "degrees.h"
 #include "radians.h"
@@ -62,4 +65,14 @@ bool Degrees::operator>=(Degrees right) const {
 
 bool Degrees::operator<=(Degrees right) const {
     return *this < right or *this == right;
+}
+
+Degrees::operator std::string() const {
+    std::stringstream stream;
+    stream << std::setprecision(3);
+    stream << this->get_degrees();
+    stream << "° (";
+    stream << this->get_radians();
+    stream << " rad)";
+    return stream.str();
 }

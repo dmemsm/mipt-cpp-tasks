@@ -37,4 +37,6 @@ public:
     bool operator<=(Degrees right) const;
 
     bool operator==(Degrees right) const;
+
+    explicit operator std::string() const;
 };

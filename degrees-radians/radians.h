@@ -37,4 +37,6 @@ public:
     bool operator<=(Radians right) const;
 
     bool operator==(Radians right) const;
+
+    explicit operator std::string() const;
 };
