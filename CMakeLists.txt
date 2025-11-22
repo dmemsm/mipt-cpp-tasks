@@ -11,3 +11,4 @@ include_directories(
 )
 
 add_subdirectory(bitwise_calculator)
+add_subdirectory(degrees-radians)
