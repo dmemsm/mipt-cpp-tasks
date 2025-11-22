@@ -1,6 +1,7 @@
+#include <cmath>
+#include <string>
 #include "degrees.h"
 #include "radians.h"
-#include <cmath>
 
 #include <gtest/gtest.h>
 
@@ -101,4 +102,11 @@ TEST(OperationsTest, Division) {
     EXPECT_NEAR((Degrees(180) / Degrees(90)).get_degrees(), 2, 0.001);
     EXPECT_EQ((Degrees(180) / 2).get_degrees(), 90);
     EXPECT_EQ((Radians(M_PI / 2) / 2).get_degrees(), 45);
+}
+
+TEST(ConversionTest, ToString) {
+    EXPECT_EQ(std::string(Degrees(0)), "0° (0 rad)");
+    EXPECT_EQ(std::string(Radians(0)), "0° (0 rad)");
+    EXPECT_EQ(std::string(Degrees(180)), "180° (3.14 rad)");
+    EXPECT_EQ(std::string(Radians(M_PI / 2)), "90° (1.57 rad)");
 }
