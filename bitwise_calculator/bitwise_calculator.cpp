@@ -70,6 +70,7 @@ public:
                 return Token(ch);
             }
 
+            case '-':
             case '0':
             case '1':
             case '2':
