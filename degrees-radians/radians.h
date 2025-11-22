@@ -20,7 +20,13 @@ public:
 
     Radians operator*(Radians right) const;
 
+    Radians operator*(double right) const;
+
+    friend Radians operator*(double left, Radians right);
+
     Radians operator/(Radians right) const;
+
+    Radians operator/(double right) const;
 
     bool operator>(Radians right) const;
 

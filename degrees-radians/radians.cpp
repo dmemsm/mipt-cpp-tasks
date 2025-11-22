@@ -28,8 +28,20 @@ Radians Radians::operator*(Radians right) const {
     return Radians(value * right.get_radians());
 }
 
+Radians Radians::operator*(double right) const {
+    return Radians(value * right);
+}
+
+Radians operator*(double left, Radians right) {
+    return Radians(right.value * left);
+}
+
 Radians Radians::operator/(Radians right) const {
     return Radians(value / right.get_radians());
+}
+
+Radians Radians::operator/(double right) const {
+    return Radians(value / right);
 }
 
 bool Radians::operator>(Radians right) const {

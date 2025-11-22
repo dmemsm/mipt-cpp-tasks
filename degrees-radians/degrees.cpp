@@ -28,8 +28,20 @@ Degrees Degrees::operator*(Degrees right) const {
     return Degrees(value * right.get_degrees());
 }
 
+Degrees Degrees::operator*(double right) const {
+    return Degrees(value * right);
+}
+
+Degrees operator*(double left, Degrees right) {
+    return Degrees(right.value * left);
+}
+
 Degrees Degrees::operator/(Degrees right) const {
     return Degrees(value / right.get_degrees());
+}
+
+Degrees Degrees::operator/(double right) const {
+    return Degrees(value / right);
 }
 
 bool Degrees::operator>(Degrees right) const {

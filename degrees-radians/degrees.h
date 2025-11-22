@@ -20,7 +20,13 @@ public:
 
     Degrees operator*(Degrees right) const;
 
+    Degrees operator*(double right) const;
+
+    friend Degrees operator*(double left, Degrees right);
+
     Degrees operator/(Degrees right) const;
+
+    Degrees operator/(double right) const;
 
     bool operator>(Degrees right) const;
 

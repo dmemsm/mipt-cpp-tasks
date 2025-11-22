@@ -85,6 +85,10 @@ TEST(OperationsTest, Multiply) {
     EXPECT_NEAR((Degrees(30) * Radians(M_PI/30)).get_degrees(), 180, 0.001);
     EXPECT_NEAR((Degrees(30) * Degrees(5)).get_degrees(), 150, 0.001);
     EXPECT_NEAR((Radians(M_PI/6) * Radians(2)).get_degrees(), 60, 0.001);
+    EXPECT_EQ((Degrees(45) * 2).get_degrees(), 90);
+    EXPECT_EQ((Radians(M_PI / 4) * 2).get_degrees(), 90);
+    EXPECT_EQ((2 * Degrees(45)).get_degrees(), 90);
+    EXPECT_EQ((2 * Radians(M_PI / 4)).get_degrees(), 90);
 }
 
 TEST(OperationsTest, Division) {
@@ -95,4 +99,6 @@ TEST(OperationsTest, Division) {
     EXPECT_NEAR((Radians(M_PI/6) / Radians(0.5)).get_degrees(), 60, 0.001);
     EXPECT_NEAR((Degrees(30) / Radians(M_PI/6)).get_degrees(), 1, 0.001);
     EXPECT_NEAR((Degrees(180) / Degrees(90)).get_degrees(), 2, 0.001);
+    EXPECT_EQ((Degrees(180) / 2).get_degrees(), 90);
+    EXPECT_EQ((Radians(M_PI / 2) / 2).get_degrees(), 45);
 }
